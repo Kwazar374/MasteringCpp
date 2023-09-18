@@ -1,0 +1,1 @@
+Type: Book Title: "Opus Magnum C++11 - Programowanie w języku C++" Author: Jerzy Grębosz
