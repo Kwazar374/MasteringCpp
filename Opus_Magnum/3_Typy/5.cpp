@@ -54,4 +54,17 @@ int main(int argc, char *argv[])
 
     int moc_silnikow = static_cast<int>(telegraf);
     cout << "co oznacza " << moc_silnikow << "% mocy silnikow" << endl;
+    
+    telegraf = Tpraca_silnikow::stop;
+    
+    enum {
+        liczba_kotwic = 2,
+        liczba_ladowni = 6
+    };
+
+    for (int k = 0; k < liczba_kotwic; ++k)
+    {
+        cout << "Opuszczamy kotwice nr " << k << " (z " << liczba_kotwic << ")" << endl;
+    }
+    cout << "Obserwujemy kazda z " << liczba_ladowni << " ladowni" << endl;
 }
