@@ -30,3 +30,12 @@ void wypisz(char sz[][15], int rozm_y, int rozm_x)
     }
     cout << "-------------------------------\n";
 }
+
+
+int main() {
+    int liczba;
+
+    liczba = 2;
+    liczba = 3;
+    liczba = 4;
+}
