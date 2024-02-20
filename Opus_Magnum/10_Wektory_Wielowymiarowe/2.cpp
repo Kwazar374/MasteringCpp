@@ -89,4 +89,95 @@ int main()
     cout << "Na miejscu pietro 0, rzad 3, fotel 8 siedzi: "
             << teatr_slowackiego[0][3][8] << endl;
 
+
+    
+    vector<vector<vector<string>>> teatr_groteska;
+
+    teatr_groteska.resize(liczba_pieter);
+    for (int nr_pietra = 0; nr_pietra < liczba_pieter; ++nr_pietra)
+    {
+        teatr_groteska[nr_pietra].resize(liczba_rzedow);
+        for (int nr_rzedu = 0; nr_rzedu < liczba_rzedow; ++nr_rzedu)
+        {
+            teatr_groteska[nr_pietra][nr_rzedu].resize(liczba_foteli_w_rzedzie);
+            for (int nr_fotela = 0; nr_fotela < liczba_foteli_w_rzedzie; ++nr_fotela)
+            {
+                teatr_groteska[nr_pietra][nr_rzedu][nr_fotela] = tekst_nikt;
+            }
+        }
+    }
+
+    teatr_groteska[1][2][15] = "Marysia Kmiecik";
+    teatr_groteska[0][8][4] = "Wojtus Krolas";
+    cout << "Rezultaty rezerwacji w Teatrze Groteska" << endl;
+    wyswietlanie_rezerwacji_miejsc(teatr_groteska);
+
+
+
+    vector<vector<vector<string>>> teatr_stu;
+
+    for (int nr_pietra = 0; teatr_stu.size() < liczba_pieter; ++nr_pietra)
+    {
+        Tpietro robocze_pietro;
+
+        for (int nr_rzedu = 0; nr_rzedu < liczba_rzedow; ++nr_rzedu)
+        {
+            Trzad rzad_roboczy;
+            for (int nr_fotela = 0; nr_fotela < liczba_foteli_w_rzedzie; ++nr_fotela)
+            {
+                rzad_roboczy.push_back(tekst_nikt);
+            }
+            robocze_pietro.push_back(rzad_roboczy);
+        }
+        teatr_stu.push_back(robocze_pietro);
+    }
+
+    teatr_stu[1][2][15] = "Krzysztof Jasinski";
+    teatr_stu[0][8][4] = "Maryla Rodowicz";
+    teatr_stu[1][3][20] = "Marek Grechuta";
+
+    cout << "Rezultaty rezerwacji w Teatrze Stu" << endl;
+    wyswietlanie_rezerwacji_miejsc(teatr_stu);
+
+
+
+    vector<vector<int>> opis_widowni
+    {
+        {26, 26, 30, 30, 28},
+        {26, 24, 24, 20},
+        {30, 30, 28},
+        {28, 14}
+    };
+
+    vector<vector<vector<string>>> sydney_opera;
+
+    sydney_opera.resize(opis_widowni.size());
+
+    for (int nr_pietra = 0; nr_pietra < sydney_opera.size(); ++nr_pietra)
+    {
+        int ile_rzedow_na_tym_pietrze = opis_widowni[nr_pietra].size();
+        sydney_opera[nr_pietra].resize(ile_rzedow_na_tym_pietrze);
+
+        for (int nr_rzedu = 0; nr_rzedu < ile_rzedow_na_tym_pietrze; ++nr_rzedu)
+        {
+            int ile_foteli_w_tym_rzedzie = opis_widowni[nr_pietra][nr_rzedu];
+            sydney_opera[nr_pietra][nr_rzedu].resize(ile_foteli_w_tym_rzedzie);
+
+            for (int nr_fotela = 0; nr_fotela < ile_foteli_w_tym_rzedzie; ++nr_fotela)
+            {
+                sydney_opera[nr_pietra][nr_rzedu][nr_fotela] = tekst_nikt;
+            }
+        }
+    }
+
+    sydney_opera[1][3][4] = "Tadeusz Boy-Zelenski";
+    sydney_opera[0][3][9] = "Bronislaw Malinowski";
+    sydney_opera[3][1][12] = "Piotr Skrzynecki";
+    sydney_opera[2][1][5] = "S. I. Witkiewicz(Witkacy)";
+
+    cout << "Grafik zajetosci widowni Sydney Opera House" << endl;
+    grafik_zajetosci_miejsc(sydney_opera);
+    cout << "Rezultaty rezerwacji w Sydney Opera House" << endl;
+    wyswietlanie_rezerwacji_miejsc(sydney_opera);
+
 }
