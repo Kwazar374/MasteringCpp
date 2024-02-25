@@ -12,7 +12,7 @@ int main()
     int *wskint = new (gdzie) int;
 
     *wskint = 222;
-    cout << "*wskint = " << (*wskint) << endl;
+    cout << "*wskint = " << (*wskint) << endl << endl;
 
     gdzie = &osiedle[102];
     int *wTabi = new (gdzie) int[3];
