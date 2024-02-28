@@ -19,6 +19,10 @@ int main()
 
     *wsk_do_zmiennej = -333;
     cout << "Potem ------> stala = " << stala << endl;
+    // wyswietlana wartosc jest taka sama jak wczesniej, poniewaz kompilator najwyrazniej
+    // usprawnia sobie prace i rezygnuje z odczytywania wartosci, ktora i tak jest stala
+    // dlatego nalezy uwazac, a najlepiej tak nie robic. Constcast mozna uzywac w innych
+    // sytuacjach, np. przy przesylaniu argumentow do funkcji
 
     double * const st_wsk_do_zmiennej =
                                 const_cast<double * const>(wsk_do_stalej);
